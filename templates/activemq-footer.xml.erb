@@ -1,0 +1,56 @@
+                </authorizationEntries>
+              </authorizationMap>
+            </map>
+          </authorizationPlugin>
+        </plugins>
+
+
+        <!--
+          The systemUsage controls the maximum amount of space the broker will
+          use before slowing down producers. For more information, see:
+
+          http://activemq.apache.org/producer-flow-control.html
+        -->
+        <systemUsage>
+            <systemUsage>
+                <memoryUsage>
+                    <memoryUsage limit="20 mb"/>
+                </memoryUsage>
+                <storeUsage>
+                    <storeUsage limit="1 gb"/>
+                </storeUsage>
+                <tempUsage>
+                    <tempUsage limit="100 mb"/>
+                </tempUsage>
+            </systemUsage>
+        </systemUsage>
+
+        <!--
+          The transport connectors expose ActiveMQ over a given protocol to
+          clients and other brokers. For more information, see:
+
+          http://activemq.apache.org/configuring-transports.html
+        -->
+        <transportConnectors>
+<% if scope.lookupvar('openwire_port') != ''-%>
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:<%= scope.lookupvar('openwire_port') %>"/>
+<% end -%>
+<% if scope.lookupvar('stomp_port') != ''-%>
+            <transportConnector name="stomp+nio" uri="stomp+nio://0.0.0.0:<%= scope.lookupvar('stomp_port') %>"/>
+<% end -%>
+        </transportConnectors>
+
+    </broker>
+
+    <!--
+      Enable web consoles, REST and Ajax APIs and demos
+      It also includes Camel (with its web console), see ${ACTIVEMQ_HOME}/conf/camel.xml for more info
+
+      Take a look at ${ACTIVEMQ_HOME}/conf/jetty.xml for more details
+    -->
+	<!-- TODO - only include the below line if the webconsole is enabled - make this a template -->
+<% if scope.lookupvar('webconsole') -%>
+    <import resource="jetty.xml"/>
+<% end -%>
+
+</beans>
