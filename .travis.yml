@@ -16,7 +16,7 @@ notifications:
   email: false
   hipchat:
     rooms:
-      - secure: "MT3lQ+mC1u7ypp4JtM4gEi9XYS5hSmd0QGRNx+J2i9+u6EfJRxNpvYUGlkn9\nBSMTwca3FZIdHXXjRrc5Ba6elLzSe/tZFAfjBWPs1dQNgoOQGWIKcIJVNuLP\n9g6CUswcKTl/ECNlhtX0weofvRl7F/43AXfFyluSwPh2IquNTuw="
+      - secure: "Otu34Uqj+/15v6K2uWDkdL8oltQ1DXV8JlzHlR3Jl0IT/xDT5NhJrYeHagZt\nPAWVrQQ6qF6xM884Q4SfV6rq/uwBnJ+mxPxCJLK16cPdsNvlP5NUgcBqyO1g\nqS4POYvTzLmSiVaqwLpI7lKTgMCpw0+qDCE7FhXnlxNcUTuJwyc="
   on_success: always
   on_failure: always
 
