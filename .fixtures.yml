@@ -1,6 +1,7 @@
 fixtures:
   repositories:
     concat: https://github.com/ripienaar/puppet-concat
+    stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
   symlinks:
     activemq: "#{source_dir}"
 
