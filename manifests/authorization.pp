@@ -54,7 +54,7 @@ define activemq::authorization(
   }
 
   if $type != 'queue' or $type != 'topic' {
-    crit('Topic must be \'queue' or \'topic\'')
+    crit('Topic must be "queue" or "topic"')
   }
 
   if $allperms {
