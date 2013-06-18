@@ -62,10 +62,14 @@ class activemq (
   $stomp_port     = 61613,
 ) {
 
+  anchor{ 'activemq::begin': }
+  anchor{ 'activemq::end': }
+
+  Anchor['activemq::begin'] ->
   Class['activemq::install'] ->
   Class['activemq::config'] ~>
   Class['activemq::service'] ->
-  Class['Activemq']
+  Anchor['activemq::end']
 
   class { 'activemq::install':
     ensure  => $ensure,
