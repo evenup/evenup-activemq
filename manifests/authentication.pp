@@ -29,9 +29,9 @@
 # Copyright 2013 EvenUp.
 #
 define activemq::authentication(
-  $username = $name,
   $password,
   $groups,
+  $username = $name,
 ) {
 
   concat::fragment { "${name}-authentication":

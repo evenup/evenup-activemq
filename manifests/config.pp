@@ -32,7 +32,7 @@ class activemq::config (
     owner   => activemq,
     group   => activemq,
     mode    => '0440',
-    content  => template('activemq/activemq-wrapper.conf.erb'),
+    content => template('activemq/activemq-wrapper.conf.erb'),
   }
 
   file {  '/etc/activemq/credentials.properties':

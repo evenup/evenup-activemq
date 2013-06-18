@@ -50,11 +50,11 @@ define activemq::authorization(
 ) {
 
   if !($read and $write and $admin) and !$allperms {
-    crit("Either all of [read, write, admin] or [allperms] must be specified")
+    crit('Either all of [read, write, admin] or [allperms] must be specified')
   }
 
   if $type != 'queue' or $type != 'topic' {
-    crit("Topic must be 'queue' or 'topic'")
+    crit('Topic must be "queue" or "topic"')
   }
 
   if $allperms {
