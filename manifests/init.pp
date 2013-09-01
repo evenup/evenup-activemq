@@ -83,13 +83,12 @@ class activemq (
     stats_user    => $stats_user,
     stats_pass    => $stats_pass,
     webconsole    => $webconsole,
-    loglevel      => $loglevel,
     openwire_port => $openwire_port,
     stomp_port    => $stomp_port,
   }
 
   class { 'activemq::service':
-    ensure  => $enable,
+    ensure  => 'running',
   }
 
 }
