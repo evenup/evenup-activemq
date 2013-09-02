@@ -1,5 +1,5 @@
 name 'evenup-activemq'
-version '1.0.0'
+version '1.1.0'
 author 'Justin Lambert <jlambert@letsevenup.com>'
 license 'Apache'
 summary 'Manages activemq.'
