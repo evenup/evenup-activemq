@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe 'activemq::authentication', :type => :define do
+  let(:facts) { { :concat_basedir => '/var/lib/puppet/concat' } }
   let(:title) { 'testuser' }
 
   context 'username' do
