@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'activemq::authorization', :type => :define do
   let(:title) { 'auth' }
+  let(:facts) { { :concat_basedir => '/var/lib/puppet/concat' } }
 
   context 'queue, read' do
     let(:params) { { :type => 'queue', :destination => 'queuename', :read => 'testuser' } }
